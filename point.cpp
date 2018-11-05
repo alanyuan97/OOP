@@ -8,6 +8,11 @@ point::point(double x_in , double y_in):x(x_in),y(y_in){}
 point::point(){
   point (0.0,0.0);
 }
+
+point::~point(){
+  std::cerr <<*this<<"/* error message point is now leaving ! */" << '\n';
+}
+
 double point::get_x() const{
     return x;
 }
@@ -16,6 +21,10 @@ double point::get_y() const{
 }
 double point::get_distance_to_origin()const{
   return distance;
+}
+
+int point::get_index(){
+  return index;
 }
 
 void point::update_distance_to_origin(){
@@ -48,6 +57,7 @@ void point::translate(const point& other){
   y+=other.get_y();
   update_distance_to_origin();
 }
+
 bool operator==(const point& p1,const point& p2){
   return (p1.x==p2.x) && (p1.y==p2.y);
 }
@@ -55,7 +65,10 @@ bool operator!=(const point& p1,const point& p2){
   return (p1.x!=p2.x) || (p1.y!=p2.y);
 }
 bool operator<(const point& p1,const point& p2){
-  return (p1.distance<p2.distance);
+  return (p1.x<p2.x) && (p1.y<p2.y);
+}
+bool operator>(const point& p1,const point& p2){
+  return (p1.x>p2.x) && (p1.y>p2.y);
 }
 std::ostream & operator<<(std::ostream& os,const point& p){
   os<<"("<<p.x<<","<<p.y<<")";
