@@ -27,6 +27,12 @@ int main (){
   std::cerr << "******************* TEST FOUR *********************" << '\n';
   polynomial p4=p2=p1;
   cout<<"chain assign => p4:\n"<<p4<<endl;
+  int a, b, c;
+  a = b = c = 1;
+
+  cout<<a << b << c <<endl;
+  int arr[3];
+  cout << arr << endl;
 
   return 0;
 }
