@@ -14,7 +14,7 @@ run:
 	./prog
 
 clean:
-	rm -rf ./prog point.o triangle.o week4main.o
+	rm -rf ./prog *.o
 
 polynomial: polynomial.hpp polynomial.cpp polymain.cpp
 	g++ -c polynomial.cpp
