@@ -24,6 +24,20 @@ polynomial::polynomial(const polynomial& other){
     coefficients[i]=other[i];
   }
 }
+
+polynomial& polynomial::operator=(const polynomial& other){
+  if (&other!=this){
+    delete []coefficients;
+
+    degree= other.degree;
+    coefficients= new double [degree+1];
+
+    for (int i =0 ;i<=degree,i++){
+      coefficients[i]=other[i];
+    }
+  }
+}
+
 polynomial::~polynomial(){
   cout<<"coefficients leaving"<<endl;
   delete [] coefficients;

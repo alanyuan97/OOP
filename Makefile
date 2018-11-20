@@ -21,3 +21,9 @@ polynomial: polynomial.hpp polynomial.cpp polymain.cpp
 	g++ -c polymain.cpp
 	g++ polynomial.o polymain.o -o poly
 	./poly
+
+label: label_point.hpp label_point.cpp labelmain.cpp
+	g++ -c label_point.cpp
+	g++ -c labelmain.cpp
+	g++ labelmain.o label_point.o -o label
+	./label

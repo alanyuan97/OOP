@@ -1,3 +1,4 @@
+//The sequence of desrucutor works as the same as stack : Last in - first out 
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -34,6 +35,8 @@ int main (){
     std::cerr << "finish reading data" << '\n';
     std::cerr << "size of vector " <<inputstore.size()<<'\n';
     std::cerr << "capacity of vector " <<inputstore.capacity()<<'\n';
+    //once the capacity has reached it max, the compiler will copy it and put the point
+    //in a new vector => deleting the points after copying => therefore seeing points leaving
 
   }
   for (int i =0 ;i<3;i++){
