@@ -14,7 +14,7 @@ run:
 	./prog
 
 clean:
-	rm -rf ./prog *.o
+	rm -rf ./prog ./week6 *.o
 
 polynomial: polynomial.hpp polynomial.cpp polymain.cpp
 	g++ -c polynomial.cpp
@@ -27,3 +27,7 @@ label: label_point.hpp label_point.cpp labelmain.cpp
 	g++ -c labelmain.cpp
 	g++ labelmain.o label_point.o -o label
 	./label
+
+inherit: week6main.cpp
+	g++ week6main.cpp -o week6
+	./week6
