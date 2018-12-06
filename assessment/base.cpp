@@ -9,7 +9,29 @@ base::base(std::string name_in,int quantity_in):name(name_in),quantity(quantity_
 //   std::cout<<"base is now leaving"<<std::endl;
 // }
 
-std::ostream& operator<<(std::ostream& os, const base& other){
-  os<<other.name<<" "<<other.quantity<<std::endl;
+std::ostream& operator<<(std::ostream& os, base& other){
+  return other.display(os);
+}
+
+bool operator<(const base& a,const base& b){
+  if(a.quantity<b.quantity){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+bool operator>(const base& a,const base& b){
+  if(a.quantity>b.quantity){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+std::ostream& base::display(std::ostream& os){
+  os<<name<<" ("<<quantity<<")"<<std::endl;
   return os;
 }
