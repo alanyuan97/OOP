@@ -13,22 +13,8 @@ std::ostream& operator<<(std::ostream& os, base& other){
   return other.display(os);
 }
 
-bool operator<(const base& a,const base& b){
-  if(a.quantity<b.quantity){
-    return true;
-  }
-  else{
-    return false;
-  }
-}
-
-bool operator>(const base& a,const base& b){
-  if(a.quantity>b.quantity){
-    return true;
-  }
-  else{
-    return false;
-  }
+bool base::operator<(const base& a)const{
+  return (this->quantity<a.quantity);
 }
 
 std::ostream& base::display(std::ostream& os){

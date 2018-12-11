@@ -9,20 +9,6 @@ std::ostream& derived::display(std::ostream& os){
   return os;
 }
 
-bool operator<(const derived& a,const derived& b){
-  if(a.quantity<b.quantity){
-    return true;
-  }
-  else{
-    return false;
-  }
-}
-
-bool operator>(const derived& a,const derived& b){
-  if(a.quantity>b.quantity){
-    return true;
-  }
-  else{
-    return false;
-  }
+bool derived::operator<(const derived& a)const{
+  return (this->quantity<a.quantity);
 }

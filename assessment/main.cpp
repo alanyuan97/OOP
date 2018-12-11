@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <vector>
+#include <list>
 #include <algorithm>
 #include <fstream>
 #include <cstdlib>
@@ -8,8 +8,8 @@
 using namespace std;
 
 int main (){
-  vector<base*> unrestrictedlist;
-  vector<base*> restrictedlist;
+  list<base*> unrestrictedlist;
+  list<base*> restrictedlist;
   // read from books.txt
   ifstream infile;
   string filename;
@@ -41,22 +41,27 @@ int main (){
   // base* ptr1=new base("Alan",2);
   // input.push_back(ptr1);
   cout<<"unrestricted items:"<<endl;
-  for (int i=0;i<unrestrictedlist.size();i++){
-    cout<<*unrestrictedlist[i]<<endl;
+  //sort(unrestrictedlist.begin(),unrestrictedlist.end());
+  unrestrictedlist.sort();
+  for (list<base*>::iterator it=unrestrictedlist.begin();it!=unrestrictedlist.end();++it){
+    cout<<**it<<endl;
   }
-
-  cout<<"restricted items:"<<endl;
-  for (int i=0;i<restrictedlist.size();i++){
-    cout<<*restrictedlist[i]<<endl;
-  }
-
-  for (int i=0;i<restrictedlist.size();i++){
-    delete restrictedlist[i];
-  }
-
-  for (int i=0;i<unrestrictedlist.size();i++){
-    delete unrestrictedlist[i];
-  }
+  // for (int i=0;i<unrestrictedlist.size();i++){
+  //   cout<<*unrestrictedlist[i]<<endl;
+  // }
+  //
+  // cout<<"restricted items:"<<endl;
+  // for (int i=0;i<restrictedlist.size();i++){
+  //   cout<<*restrictedlist[i]<<endl;
+  // }
+  //
+  // for (int i=0;i<restrictedlist.size();i++){
+  //   delete restrictedlist[i];
+  // }
+  //
+  // for (int i=0;i<unrestrictedlist.size();i++){
+  //   delete unrestrictedlist[i];
+  // }
 
   return 0;
 }
