@@ -35,6 +35,7 @@ int main(){
   catch (const string& exception){
     cout<<exception<<endl;
   }
+  std::cerr << "/* error message */" << '\n';
 
   return 0;
 }

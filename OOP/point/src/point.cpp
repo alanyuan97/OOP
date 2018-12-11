@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "point.hpp"
 
 using namespace std;
@@ -9,6 +10,15 @@ point::point(){
   point (0.0,0.0);
 }
 
+point& point::operator=(const point& other){
+  x=other.x;
+  y=other.y;
+  distance=other.distance;
+  return *this;
+}
+//assignment operator
+point::point (const point& other):x(other.x),y(other.y),distance(other.distance){}
+//copy constructor
 point::~point(){
   std::cerr <<*this<<"/* error message point is now leaving ! */" << '\n';
 }

@@ -1,12 +1,15 @@
+#ifndef POINT
+#define POINT
 #include <iostream>
 #include <cmath>
-#include <vector>
-
 class point {
   public:
     //constructors
-    point (double x_in, double y_in);
+    point(double x_in, double y_in);
     point();
+    point& operator=(const point& other);
+    point (const point& other);
+    //destructors
     ~point();
 
     //access member functions
@@ -36,3 +39,5 @@ class point {
     int index;
     void update_distance_to_origin();
 };
+
+#endif

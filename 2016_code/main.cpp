@@ -28,7 +28,8 @@ void printall(vector<item*> listin){
   //   cout<<i<<": "<<*listin[i]<<" ";
   //   if (!(listin[i]->state)){
   //       cout<<"currently availible"<<endl;
-  //     }
+  //     }    outfile<<**it;
+
   //     else{
   //       cout<<"borrowed"<<listin[i]->get_borrow_name()<<"until"<<listin[i]->get_date()<<"12/2018"<<endl;
   //     }
