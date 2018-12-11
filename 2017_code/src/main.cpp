@@ -15,6 +15,10 @@ void printall(list<item*> listin){
   }
 }
 
+bool com(item*& a1,item*&a2){
+  return (*a1<*a2);
+}
+
 int main(){
   list<item*> unrestrictedlist;
   list<item*> restrictedlist;
@@ -41,9 +45,11 @@ int main(){
   }
   infile.close();
 
-  unrestrictedlist.sort();
   printall(unrestrictedlist);
-  restrictedlist.sort();
+  unrestrictedlist.sort(com);
+  printall(unrestrictedlist);
+  printall(restrictedlist);
+  restrictedlist.sort(com);
   printall(restrictedlist);
 
   return 0;
