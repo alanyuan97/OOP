@@ -8,8 +8,9 @@
 #include "unres.hpp"
 using namespace std;
 
-void printall(list<item*> listin){
-  list<item*>::iterator it;
+template <class T>
+void printall(list<T> listin){
+  typename list<T>::const_iterator it;
   for (it=listin.begin();it!=listin.end();++it){
     cout<<**it<<endl;
   }

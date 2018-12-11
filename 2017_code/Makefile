@@ -1,3 +1,5 @@
+#xxx:xxx make file statement
+#tab:
 TARGET=bin/item
 MAIN=bin/main.o
 CLASS=$(addprefix bin/, item.o unres.o res.o)
@@ -6,8 +8,10 @@ CC=g++
 CCFLAG=-Wall -std=c++11
 INCFLAG=-I inc
 
+#@ ignore bash syntax print
 run: all
 	@./$(TARGET)
+
 
 all: $(TARGET)
 
