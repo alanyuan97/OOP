@@ -6,15 +6,26 @@
 #include "item.hpp"
 #include "res.hpp"
 #include "unres.hpp"
+#include "hp.hpp"
 using namespace std;
+using namespace hp;
 
-template <class T>
-void printall(list<T> listin){
-  typename list<T>::const_iterator it;
-  for (it=listin.begin();it!=listin.end();++it){
-    cout<<**it<<endl;
-  }
-}
+// template <class T>
+// void printall(const list<T>& listin){
+//   typename list<T>::const_iterator it;
+//   for (it=listin.begin();it!=listin.end();++it){
+//     cout<<**it<<endl;
+//   }
+// }
+//
+// template <class T>
+// void trash(list<T>& listin){
+//   typename list<T>::iterator it;
+//   cout<<"deleting memory"<<endl;
+//   for (it=listin.begin();it!=listin.end();++it){
+//     delete *it;
+//   }
+// }
 
 bool com(item*& a1,item*&a2){
   return (*a1<*a2);
@@ -46,12 +57,18 @@ int main(){
   }
   infile.close();
 
+  cout<<"before sorting: "<<endl;
   printall(unrestrictedlist);
+  printall(restrictedlist);
   unrestrictedlist.sort(com);
+  restrictedlist.sort(com);
+  cout<<"after sorting: "<<endl;
   printall(unrestrictedlist);
   printall(restrictedlist);
-  restrictedlist.sort(com);
-  printall(restrictedlist);
+
+  trash(unrestrictedlist);
+  trash(restrictedlist);
+
 
   return 0;
 

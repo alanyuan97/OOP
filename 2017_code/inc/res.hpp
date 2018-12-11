@@ -7,6 +7,7 @@
 class restrict:public item{
 public:
   restrict(int quantity_in,std::string name_in,std::string code_in);
+  // virtual ~restrict();
   virtual std::ostream& print(std::ostream& os);
 protected:
   std::string code;
