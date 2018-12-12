@@ -65,7 +65,14 @@ int main(){
   cout<<"after sorting: "<<endl;
   printall(unrestrictedlist);
   printall(restrictedlist);
-
+  list<item*>::iterator it2=unrestrictedlist.begin();
+  list<item*>::iterator it1=restrictedlist.begin();
+  for (it2;it2!=unrestrictedlist.end();++it2){
+    **it2=**it2+**it1;
+    it1++;
+  }
+  printall(unrestrictedlist);
+  printall(restrictedlist);
   trash(unrestrictedlist);
   trash(restrictedlist);
 

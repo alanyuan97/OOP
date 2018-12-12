@@ -12,6 +12,8 @@ public:
   virtual ~item(){};
   friend std::ostream& operator<<(std::ostream& os,item& input);
   friend bool operator<(const item& c1,const item& c2);
+  friend item& operator+(item& c1,item& c2);
+  item& operator=(const item& other);
   virtual std::ostream& print(std::ostream& os)=0;
 
 };
